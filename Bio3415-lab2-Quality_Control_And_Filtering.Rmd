@@ -32,16 +32,39 @@ sequali --outdir outputs/ outputs/filtered_reads_ERR1539006.fastq
 ```
 
 
-## Results changed post filtration
-The sanity check points before filtlong?
-The sanity check points after filtlong?
-Quality check?
-Downstream Analysis?
+## Results changed before and after filtration
+- After filteration with filtlong, the number of reads and the number of bases decreased because the low-quality read, short fragments, and sequence artifacts has been removed. Consequently, the overall average quality of the remaining read dataset improved significantly, providing a cleaner and more reliable set of data for downstream tasks.
+- By this reason, after getting the high-quality after filteration, the result can use for downstream anaylysis such as genome assembly where high accuracy and clean sequence construction are critical to producing reliable results.
+
 
 ## Update github and .gitignore
 *.fastq
 
 *.fastq.gz
+
+## Download illumina reads of a Campilobacter jejuni genome sequencing
+wget -nc -P data/ ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR112/040/ERR11203340/ERR11203340_1.fastq.gz
+
+wget -nc -P data/ ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR112/040/ERR11203340/ERR11203340_2.fastq.gz
+
+
+## Adding some chunk code (q9)
+# Sequence quality per base per cycle: based on that write at which cycle do you see quality score dropping below 2
+
+#Sequence content per base per cycle: based on that where do you see the highest proportion on Ns
+
+#Read frequency plot: based on that what is the level of redundancy of most seqs (e.g. do most seqs have more than one read)?
+
+
+#Q10. Trim the reads based on the quality scores. trim bases from the 3' end inwards that have Q score <20 (2 marks). Direct the outputs to the outputs/ directory.
+#     You can use the QuasR::preprocessReads() function for this purpose.
+
+
+
+#Q11. Make sure to stage, commit and stage your changes to GitHub (1 mark)
+
+
+
 
 
 
